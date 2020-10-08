@@ -14,12 +14,12 @@ class UsLeftMenu extends React.Component {
             <div className="usleftmenu_tile">
               <div className="usleftmenu_tile_icon">
                 <CheckCircleIcon
-                  style={{ fill: "#2196f3", backgroundColor: "transparent" }}
+                  style={{ fill: "#007BFC", backgroundColor: "transparent" }}
                 />
               </div>
               <div
                 className="usleftmenu_tile_title"
-                style={{ color: "#2196f3" }}
+                style={{ color: "#007BFC" }}
               >
                 To do
               </div>
@@ -59,12 +59,12 @@ class UsLeftMenu extends React.Component {
               <div className="usleftmenu_tile">
                 <div className="usleftmenu_tile_icon">
                   <ThumbsUpIcon
-                    style={{ fill: "#2196f3", backgroundColor: "transparent" }}
+                    style={{ fill: "#007BFC", backgroundColor: "transparent" }}
                   />
                 </div>
                 <div
                   className="usleftmenu_tile_title"
-                  style={{ color: "#2196f3" }}
+                  style={{ color: "#007BFC" }}
                 >
                   Review
                 </div>
@@ -103,11 +103,11 @@ class UsLeftMenu extends React.Component {
               <Link to="/about" style={{ textDecoration: "none" }}>
                 <div className="usleftmenu_tile">
                   <div className="usleftmenu_tile_icon">
-                    <HelpIcon style={{ fill: "#2196f3" }} />
+                    <HelpIcon style={{ fill: "#007BFC" }} />
                   </div>
                   <div
                     className="usleftmenu_tile_title"
-                    style={{ color: "#2196f3" }}
+                    style={{ color: "#007BFC" }}
                   >
                     About
                   </div>

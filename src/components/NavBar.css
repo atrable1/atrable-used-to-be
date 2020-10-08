@@ -1,6 +1,6 @@
 .navbar {
     display: table;
-    height: 4rem;
+    height: 60px;
     width: 100%;
     /* background-color: whitesmoke; */
     position: fixed;
@@ -42,7 +42,7 @@
 .navbar_icon_selected {
     vertical-align: middle;
     display: table-cell;
-    fill: #2196f3;
+    fill: #007BFC;
     height: 2.5rem;
 }
 
@@ -55,14 +55,13 @@
 
 .navbar_icon_button {
     display: table-cell;
-    height: 90%;
+    height: 56px;
+    width: 100%;
     background-color: transparent;
     outline-width: 0rem;
     border: none;
     cursor: pointer;
     border-radius: 1rem;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
 }
 
 .navbar_icon_button:hover {
@@ -237,4 +236,17 @@ html {
     padding: 0.5rem;
     background-color: whitesmoke;
     border-radius: 2rem;
+}
+
+.LogOutIcon {
+    fill: gray;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 2rem;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }

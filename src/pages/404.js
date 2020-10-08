@@ -22,7 +22,7 @@ class ErrorPageNotFound extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <html>
           <head>
             <title>404 | Atrable</title>
@@ -30,8 +30,10 @@ class ErrorPageNotFound extends React.Component {
           </head>
           <body>
             <NavBar currentPage={0} />
-            <div class="message">
-              <h2> &#129300;</h2>
+            <div className="message">
+              <span role="img" aria-label="">
+                🤔
+              </span>
               <h1>This Page Isn't Available</h1>
               <p>
                 The link may be broken, or the page may have been removed. Check
@@ -46,7 +48,7 @@ class ErrorPageNotFound extends React.Component {
             <p>Temporary 404 page</p>
           </body>
         </html>
-      </div>
+      </>
     );
   }
 }

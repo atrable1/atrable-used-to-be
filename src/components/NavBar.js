@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import "../pages/Home";
 import { Link } from "react-router-dom";
@@ -7,11 +7,13 @@ import ArrowDropDownIcon from "../assets/icons/ArrowDropDownIcon";
 import AddCollectionIcon from "../assets/icons/AddCollectionIcon";
 import SubjectIcon from "../assets/icons/SubjectIcon";
 import StarIcon from "../assets/icons/StarIcon";
-import SettingsIcon from "../assets/icons/SettingsIcon";
 import ExploreFilledIcon from "../assets/icons/ExploreFilledIcon";
 import HomeFilledIcon from "../assets/icons/HomeFilledIcon";
 import ExploreOutlinedIcon from "../assets/icons/ExploreOutlinedIcon";
 import HomeOutlinedIcon from "../assets/icons/HomeOutlinedIcon";
+import LogOutIcon from "../assets/icons/LogOutIcon";
+import "../firebase";
+import firebase from "firebase";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -41,12 +43,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <div className="navbar">
           <div className="navbar_container_1">
             <div className="navbar_name"></div>
           </div>
-          <Container2 currentPage={this.props.currentPage} />
+          <Container2 home={this.props.home} explore={this.props.explore} />
           <div className="navbar_container_3">
             <div className="navbar_container_3_column">
               <button
@@ -64,11 +66,12 @@ class NavBar extends React.Component {
                 <AddIcon />
               </button>
             </div>
+            <ProfileButton />
           </div>
         </div>
         <DropDown1 show={this.state.dropDown1Opened} />
         <DropDown2 show={this.state.dropDown2Opened} />
-      </div>
+      </>
     );
   }
 }
@@ -112,14 +115,7 @@ function DropDown2(props) {
             <div className="navbar_dropdown_button_title">Rate us</div>
           </div>
         </Link>
-        <Link to="/settings" style={{ textDecoration: "none" }}>
-          <div className="navbar_dropdown_button">
-            <div className="navbar_dropdown_button_icon">
-              <SettingsIcon />
-            </div>
-            <div className="navbar_dropdown_button_title">Settings</div>
-          </div>
-        </Link>
+        <LogOutButton />
       </div>
     );
   } else {
@@ -127,114 +123,150 @@ function DropDown2(props) {
   }
 }
 
-function Container2(props) {
-  if (props.currentPage === 1) {
-    return (
-      <div className="navbar_container_2">
-        <div className="navbar_menu">
-          <div className="navbar_menu_child">
-            <Link to="/home">
-              <button className="navbar_icon_button">
-                <HomeFilledIcon
-                  style={{
-                    verticalAlign: "middle",
-                    display: "tableCell",
-                    fill: "#2196f3",
-                    height: "2.5rem",
-                  }}
-                />
-              </button>
-            </Link>
-          </div>
-          <div className="navbar_menu_child">
-            <Link to="/explore">
-              <button className="navbar_icon_button">
-                <ExploreOutlinedIcon
-                  style={{
-                    verticalAlign: "middle",
-                    display: "tableCell",
-                    fill: "gray",
-                    height: "2.5rem",
-                  }}
-                />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  } else {
-    if (props.currentPage === 2) {
+function LogOutButton() {
+  const [init, setInit] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+      setInit(true);
+    });
+  }, []);
+
+  if (init) {
+    if (loggedIn) {
       return (
-        <div className="navbar_container_2">
-          <div className="navbar_menu">
-            <div className="navbar_menu_child">
-              <Link to="/home">
-                <button className="navbar_icon_button">
-                  <HomeOutlinedIcon
-                    style={{
-                      verticalAlign: "middle",
-                      display: "tableCell",
-                      fill: "gray",
-                      height: "2.5rem",
-                    }}
-                  />
-                </button>
-              </Link>
-            </div>
-            <div className="navbar_menu_child">
-              <Link to="/explore">
-                <button className="navbar_icon_button">
-                  <ExploreFilledIcon
-                    style={{
-                      verticalAlign: "middle",
-                      display: "tableCell",
-                      fill: "#2196f3",
-                      height: "2.5rem",
-                    }}
-                  />
-                </button>
-              </Link>
-            </div>
+        <div className="navbar_dropdown_button" onClick={Logout}>
+          <div className="navbar_dropdown_button_icon">
+            <LogOutIcon />
           </div>
+          <div className="navbar_dropdown_button_title">Log out</div>
         </div>
       );
     } else {
+      return <></>;
+    }
+  } else {
+    return <></>;
+  }
+}
+
+function ProfileButton() {
+  const [init, setInit] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+      setInit(true);
+    });
+  }, []);
+
+  if (init) {
+    if (loggedIn) {
       return (
-        <div className="navbar_container_2">
-          <div className="navbar_menu">
-            <div className="navbar_menu_child">
-              <Link to="/home">
-                <button className="navbar_icon_button">
-                  <HomeOutlinedIcon
-                    style={{
-                      verticalAlign: "middle",
-                      display: "tableCell",
-                      fill: "gray",
-                      height: "2.5rem",
-                    }}
-                  />
-                </button>
-              </Link>
-            </div>
-            <div className="navbar_menu_child">
-              <Link to="/explore">
-                <button className="navbar_icon_button">
-                  <ExploreOutlinedIcon
-                    style={{
-                      verticalAlign: "middle",
-                      display: "tableCell",
-                      fill: "gray",
-                      height: "2.5rem",
-                    }}
-                  />
-                </button>
-              </Link>
-            </div>
-          </div>
+        <div className="navbar_container_3_column">
+          <Link to="/me">
+            <button className="navbar_round_icon_button_2">
+              {/* 유저의 프로필 사진 */}
+            </button>
+          </Link>
         </div>
       );
+    } else {
+      return <></>;
     }
+  } else {
+    return <></>;
+  }
+}
+
+async function Logout() {
+  await firebase.auth().signOut();
+  window.location.reload();
+}
+
+function Container2(props) {
+  return (
+    <div className="navbar_container_2">
+      <div className="navbar_menu">
+        <div className="navbar_menu_child">
+          <Link to="/home">
+            <button className="navbar_icon_button">
+              <HomeButton on={props.home} />
+            </button>
+          </Link>
+        </div>
+        <div className="navbar_menu_child">
+          <Link to="/explore">
+            <button className="navbar_icon_button">
+              <ExploreButton on={props.explore} />
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HomeButton(props) {
+  if (props.on === true) {
+    return (
+      <HomeFilledIcon
+        style={{
+          verticalAlign: "middle",
+          display: "tableCell",
+          fill: "#007BFC",
+          height: "2.5rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      />
+    );
+  } else {
+    return (
+      <HomeOutlinedIcon
+        style={{
+          verticalAlign: "middle",
+          display: "tableCell",
+          fill: "gray",
+          height: "2.5rem",
+        }}
+      />
+    );
+  }
+}
+
+function ExploreButton(props) {
+  if (props.on === true) {
+    return (
+      <ExploreFilledIcon
+        style={{
+          verticalAlign: "middle",
+          display: "tableCell",
+          fill: "#007BFC",
+          height: "2.5rem",
+        }}
+      />
+    );
+  } else {
+    return (
+      <ExploreOutlinedIcon
+        style={{
+          verticalAlign: "middle",
+          display: "tableCell",
+          fill: "gray",
+          height: "2.5rem",
+        }}
+      />
+    );
   }
 }
 

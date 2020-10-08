@@ -7,7 +7,7 @@ html {
     width: 20vw;
     height: calc(100% - 5rem);
     margin-top: 4rem;
-    position: absolute;
+    position: fixed;
     overflow: auto;
     padding-left: 1rem;
     padding-right: 3rem;
