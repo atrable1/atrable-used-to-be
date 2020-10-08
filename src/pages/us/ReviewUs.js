@@ -4,6 +4,8 @@ import LoginToUse from "../../components/LoginToUse";
 import NavBar from "../../components/NavBar";
 import UsLeftMenu from "../../components/UsLeftMenu";
 import "./ReviewUs.css";
+import firebase from "firebase"
+import "../../firebase"
 
 function ReviewUs() {
   const [init, setInit] = useState(false);

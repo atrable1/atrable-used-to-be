@@ -4,6 +4,8 @@ import LoginToUse from "../../components/LoginToUse";
 import NavBar from "../../components/NavBar";
 import UsLeftMenu from "../../components/UsLeftMenu";
 import "./UsTodo.css";
+import firebase from "firebase"
+import "../../firebase"
 
 function UsTodo() {
   const [init, setInit] = useState(false);
