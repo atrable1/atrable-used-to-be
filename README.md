@@ -11,3 +11,23 @@ Informations
 
 
 [website]: https://atrable.com
+
+
+
+History
+---
+
+* 2020
+  - January
+  - February
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December
+
