@@ -8,6 +8,9 @@ Informations
 
 * source: here
 * [result][website]
+---
+* Frontend: React
+* Backend: Firebase (for fast deployment)
 
 
 [website]: https://atrable.com
@@ -19,7 +22,6 @@ History
 
 * 2020
   - January
-    + COVID started 😥
   - February
     + Was interested in Flutter
   - March
@@ -27,12 +29,12 @@ History
   - April, May, June, July
     + Had fun with Flutter
   - August
-    + Realized that Flutter has a limitation to do something: Cause the framework (+Dartlang) is owned by Google, everything was relied on Google
+    + Realized that Flutter has a limitation to do something: Cause the framework (+Dartlang) is owned by Google, so everything was relied on Google
   - September
     + Started making my website with React
   - October
     + Made this README.md
-    + 
+    + Made Login & Signup page
   - November
   - December
 
