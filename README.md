@@ -27,11 +27,12 @@ History
   - April, May, June, July
     + Had fun with Flutter
   - August
-    + Realized that Flutter has a limitation to do something: 
+    + Realized that Flutter has a limitation to do something: Cause the framework (+Dartlang) is owned by Google, everything was relied on Google
   - September
     + Started making my website with React
   - October
     + Made this README.md
+    + 
   - November
   - December
 
