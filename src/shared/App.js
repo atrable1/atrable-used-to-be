@@ -28,7 +28,6 @@ function App() {
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/termsofuse" component={TermsOfUse} />
         <Route exact path="/me" component={Me} />
-        {/*  */}
         <ErrorPageNotFound />
       </Switch>
     </BrowserRouter>

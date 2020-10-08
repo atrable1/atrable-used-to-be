@@ -4,8 +4,8 @@ import LoginToUse from "../../components/LoginToUse";
 import NavBar from "../../components/NavBar";
 import UsLeftMenu from "../../components/UsLeftMenu";
 import "./ReviewUs.css";
-import firebase from "firebase"
-import "../../firebase"
+import firebase from "firebase";
+import "../../firebase";
 
 function ReviewUs() {
   const [init, setInit] = useState(false);
@@ -23,22 +23,10 @@ function ReviewUs() {
   if (init) {
     if (loggedIn) {
       return (
-        <div>
-          <html>
-            <head>
-              <meta charset="utf-8" />
-              <meta
-                name="vewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <title>Atrable</title>
-            </head>
-            <body>
-              <UsLeftMenu currentPage={1} />
-              <NavBar />
-            </body>
-          </html>
-        </div>
+        <>
+          <UsLeftMenu currentPage={1} />
+          <NavBar />
+        </>
       );
     } else {
       return <LoginToUse />;

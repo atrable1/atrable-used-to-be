@@ -4,8 +4,8 @@ import LoginToUse from "../../components/LoginToUse";
 import NavBar from "../../components/NavBar";
 import UsLeftMenu from "../../components/UsLeftMenu";
 import "./UsTodo.css";
-import firebase from "firebase"
-import "../../firebase"
+import firebase from "firebase";
+import "../../firebase";
 
 function UsTodo() {
   const [init, setInit] = useState(false);
@@ -24,22 +24,10 @@ function UsTodo() {
   if (init) {
     if (loggedIn) {
       return (
-        <div>
-          <html>
-            <head>
-              <meta charset="utf-8" />
-              <meta
-                name="vewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <title>Atrable</title>
-            </head>
-            <body>
-              <UsLeftMenu currentPage={0} />
-              <NavBar />
-            </body>
-          </html>
-        </div>
+        <>
+          <UsLeftMenu currentPage={0} />
+          <NavBar />
+        </>
       );
     } else {
       return <LoginToUse />;

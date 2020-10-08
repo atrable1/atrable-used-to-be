@@ -23,39 +23,16 @@ function MainExplore() {
   if (init) {
     if (loggedIn) {
       return (
-        <html>
-          <head>
-            <meta charSet="utf-8" />
-            <meta
-              name="vewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <title>Atrable</title>
-          </head>
-          <body>
-            <NavBar explore={true} />
-            <div>
-              <h1>{firebase.auth().currentUser.uid}</h1>
-            </div>
-          </body>
-        </html>
+        <>
+          <NavBar explore={true} />
+          <div></div>
+        </>
       );
     } else {
       return <LoginToUse />;
     }
   } else {
-    return (
-      <html>
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="vewport" content="width=device-width, initial-scale=1" />
-          <title>Atrable</title>
-        </head>
-        <body>
-          <Loading />
-        </body>
-      </html>
-    );
+    return <Loading />;
   }
 }
 

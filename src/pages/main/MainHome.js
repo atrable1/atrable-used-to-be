@@ -5,6 +5,7 @@ import "./MainHome.css";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
 import NavBar from "../../components/NavBar";
+import VerifyEmail from "../../components/VerifyEmail";
 
 function MainHome() {
   const [init, setInit] = useState(false);
@@ -22,40 +23,26 @@ function MainHome() {
 
   if (init) {
     if (loggedIn) {
-      return (
-        <html>
-          <head>
-            <meta charSet="utf-8" />
-            <meta
-              name="vewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <title>Atrable</title>
-          </head>
-          <body>
-            <NavBar home={true}/>
-            <div>
-              <h1>{firebase.auth().currentUser.uid}</h1>
-            </div>
-          </body>
-        </html>
-      );
+      if (firebase.auth().currentUser.emailVerified) {
+        return (
+          <>
+            <NavBar home={true} />
+            <div></div>
+          </>
+        );
+      } else {
+        return (
+          <>
+            <NavBar home={true} />
+            <VerifyEmail />
+          </>
+        );
+      }
     } else {
       return <LoginToUse />;
     }
   } else {
-    return (
-      <html>
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="vewport" content="width=device-width, initial-scale=1" />
-          <title>Atrable</title>
-        </head>
-        <body>
-          <Loading />
-        </body>
-      </html>
-    );
+    return <Loading />;
   }
 }
 

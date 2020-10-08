@@ -79,24 +79,26 @@ class NavBar extends React.Component {
 function DropDown1(props) {
   if (props.show === true) {
     return (
-      <div className="navbar_dropdown1">
-        <Link to="/new/collection" style={{ textDecoration: "none" }}>
-          <div className="navbar_dropdown_button">
-            <div className="navbar_dropdown_button_icon">
-              <AddCollectionIcon />
+      <>
+        <div className="navbar_dropdown1">
+          <Link to="/new/collection" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <AddCollectionIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Collection</div>
             </div>
-            <div className="navbar_dropdown_button_title">Collection</div>
-          </div>
-        </Link>
-        <Link to="/new/story" style={{ textDecoration: "none" }}>
-          <div className="navbar_dropdown_button">
-            <div className="navbar_dropdown_button_icon">
-              <SubjectIcon />
+          </Link>
+          <Link to="/new/story" style={{ textDecoration: "none" }}>
+            <div className="navbar_dropdown_button">
+              <div className="navbar_dropdown_button_icon">
+                <SubjectIcon />
+              </div>
+              <div className="navbar_dropdown_button_title">Story</div>
             </div>
-            <div className="navbar_dropdown_button_title">Story</div>
-          </div>
-        </Link>
-      </div>
+          </Link>
+        </div>
+      </>
     );
   } else {
     return <div></div>;

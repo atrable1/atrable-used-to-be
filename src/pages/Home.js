@@ -24,87 +24,43 @@ function Home() {
 
   if (init) {
     if (loggedIn) {
-      return (
-        <html>
-          <head>
-            <meta charSet="utf-8" />
-            <meta
-              name="vewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <title>Atrable</title>
-          </head>
-          <body>
-            <Redirect to="/home" />
-          </body>
-        </html>
-      );
+      return <Redirect to="/home" />;
     } else {
       if (window.innerHeight / window.innerWidth < 1) {
         return (
-          <html>
-            <head>
-              <meta charSet="utf-8" />
-              <meta
-                name="vewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <title>Atrable</title>
-            </head>
-            <body>
-              <NavBar />
-              <div className="row">
-                <div className="column_left">
-                  <div className="welcome">Built for you</div>
-                  <div className="description">
-                    Atrable is a platform where you can share your travel
-                    stories. You can view traveler's stories, follow travelers,
-                    and share your travel story.
-                  </div>
-                </div>
-                <div className="column_right">
-                  <LoginCard />
+          <>
+            <NavBar />
+            <div className="row">
+              <div className="column_left">
+                <div className="welcome">Built for you</div>
+                <div className="description">
+                  Atrable is a platform where you can share your travel stories.
+                  You can view traveler's stories, follow travelers, and share
+                  your travel story.
                 </div>
               </div>
-            </body>
-          </html>
+              <div className="column_right">
+                <LoginCard />
+              </div>
+            </div>
+          </>
         );
       } else {
         return (
-          <html>
-            <head>
-              <meta charSet="utf-8" />
-              <meta
-                name="vewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <title>Atrable</title>
-            </head>
-            <body>
-              <div className="row">
-                <div className="column_right_for_mobile">
-                  <div className="welcome_for_mobile">Welcome</div>
-                  <LoginCard />
-                </div>
+          <>
+            <NavBar />
+            <div className="row">
+              <div className="column_right_for_mobile">
+                <div className="welcome_for_mobile">Welcome</div>
+                <LoginCard />
               </div>
-            </body>
-          </html>
+            </div>
+          </>
         );
       }
     }
   } else {
-    return (
-      <html>
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="vewport" content="width=device-width, initial-scale=1" />
-          <title>Atrable</title>
-        </head>
-        <body>
-          <Loading />
-        </body>
-      </html>
-    );
+    return <Loading />;
   }
 }
 
