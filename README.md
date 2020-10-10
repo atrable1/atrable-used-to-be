@@ -1,17 +1,25 @@
+src/firebase.js not included
+===
+
+
 Built for you 
 ===
+* something like key, database url are located in firebase.js
 
 Atrable is a platform where you can share your travel stories. You can view traveler's stories, follow travelers, and share your travel story.
 
-Informations
+Note
 ---
 
 * source: here
 * [result][website]
 ---
 * Frontend: React
-  - used create-react-app
 * Backend: Firebase (for fast deployment)
+---
+* used create-react-app
+* deleted src/firebase.js for security
+  - something like key, database url are located in firebase.js
 
 
 [website]: https://atrable.com
