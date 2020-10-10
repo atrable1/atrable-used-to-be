@@ -36,6 +36,7 @@ History
   - October
     + Made this README.md
     + Made Login & Signup page
+    + Started to make "mypage"
   - November
   - December
 
