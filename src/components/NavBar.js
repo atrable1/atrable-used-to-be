@@ -52,7 +52,7 @@ class NavBar extends React.Component {
           <div className="navbar_container_3">
             <div className="navbar_container_3_column">
               <button
-                className="navbar_round_icon_button_2"
+                className="navbar_round_icon_button_1"
                 onClick={this.toggleDropDown2}
               >
                 <ArrowDropDownIcon />
@@ -173,15 +173,24 @@ function ProfileButton() {
 
   if (init) {
     if (loggedIn) {
-      return (
-        <div className="navbar_container_3_column">
-          <Link to="/me">
-            <button className="navbar_round_icon_button_2">
-              {/* 유저의 프로필 사진 */}
-            </button>
-          </Link>
-        </div>
-      );
+      if (firebase.auth().currentUser.emailVerified) {
+        return (
+          <div className="navbar_container_3_column">
+            <Link to="/me">
+              <button
+                className="navbar_round_icon_button_2"
+                style={{
+                  backgroundImage: "url(https://picsum.photos/100/100)",
+                }}
+              >
+                {/* 유저의 프로필 사진 */}
+              </button>
+            </Link>
+          </div>
+        );
+      } else {
+        return <></>;
+      }
     } else {
       return <></>;
     }

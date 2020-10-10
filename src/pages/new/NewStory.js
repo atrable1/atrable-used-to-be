@@ -26,7 +26,8 @@ function NewStory() {
       } else {
         return (
           <>
-            <NavBar /> <VerifyEmail />
+            <NavBar />
+            <VerifyEmail />
           </>
         );
       }

@@ -8,7 +8,9 @@ function AboutUs() {
     <>
       <UsLeftMenu currentPage={2} />
       <NavBar />
+      <div className="space_h_5"></div>
       <div className="container_1">
+        {/* container_1에 margin-top 을 주면 LeftMenu에 합산이 돼 LeftMenu 가 살짝 아래로 내려가있는 것처럼 보임 -> space_h_5로 해결 */}
         <div className="container_2">
           <div className="container_row">
             <div className="container_row_key">Framework</div>

@@ -9,7 +9,7 @@ import NewStory from "../pages/new/NewStory";
 import ReviewUs from "../pages/us/ReviewUs";
 import Settings from "../pages/settings/Settings";
 import UsTodo from "../pages/us/UsTodo";
-import AboutUs from "../pages/us/AboutUs";
+// import AboutUs from "../pages/us/AboutUs";
 import TermsOfUse from "../pages/Termsofuse";
 import Me from "../pages/Me";
 
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/new/story" component={NewStory} />
         <Route exact path="/us/review" component={ReviewUs} />
         <Route exact path="/us/todo" component={UsTodo} />
-        <Route exact path="/about" component={AboutUs} />
+        {/* <Route exact path="/about" component={AboutUs} /> */}
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/termsofuse" component={TermsOfUse} />
         <Route exact path="/me" component={Me} />

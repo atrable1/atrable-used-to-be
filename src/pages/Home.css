@@ -181,6 +181,7 @@ body {
 .p {
     text-align: left;
     color: black;
+    margin-top: 2rem;
     margin-left: 1rem;
     font-size: 1.2rem;
 }

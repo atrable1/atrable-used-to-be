@@ -33,14 +33,14 @@ class UsLeftMenu extends React.Component {
               <div className="usleftmenu_tile_title">Review</div>
             </div>
           </Link>
-          <Link to="/about" style={{ textDecoration: "none" }}>
+          {/* <Link to="/about" style={{ textDecoration: "none" }}>
             <div className="usleftmenu_tile">
               <div className="usleftmenu_tile_icon">
                 <HelpIcon />
               </div>
               <div className="usleftmenu_tile_title">About</div>
             </div>
-          </Link>
+          </Link> */}
         </div>
       );
     } else {
@@ -70,14 +70,14 @@ class UsLeftMenu extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link to="/about" style={{ textDecoration: "none" }}>
+            {/* <Link to="/about" style={{ textDecoration: "none" }}>
               <div className="usleftmenu_tile">
                 <div className="usleftmenu_tile_icon">
                   <HelpIcon />
                 </div>
                 <div className="usleftmenu_tile_title">About</div>
               </div>
-            </Link>
+            </Link> */}
           </div>
         );
       } else {
@@ -100,7 +100,7 @@ class UsLeftMenu extends React.Component {
                   <div className="usleftmenu_tile_title">Review</div>
                 </div>
               </Link>
-              <Link to="/about" style={{ textDecoration: "none" }}>
+              {/* <Link to="/about" style={{ textDecoration: "none" }}>
                 <div className="usleftmenu_tile">
                   <div className="usleftmenu_tile_icon">
                     <HelpIcon style={{ fill: "#007BFC" }} />
@@ -112,28 +112,36 @@ class UsLeftMenu extends React.Component {
                     About
                   </div>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           );
         } else {
           return (
             <div className="usleftmenu">
-              <div className="usleftmenu_tile">
-                <div className="usleftmenu_tile_icon">
-                  <CheckCircleIcon />
+              <Link to="/us/todo" style={{ textDecoration: "none" }}>
+                <div className="usleftmenu_tile">
+                  <div className="usleftmenu_tile_icon">
+                    <CheckCircleIcon />
+                  </div>
+                  <div className="usleftmenu_tile_title">To do</div>
                 </div>
-                <div className="usleftmenu_tile_title">To do</div>
-              </div>
-              <div className="usleftmenu_tile">
-                <div className="usleftmenu_tile_icon">
-                  <ThumbsUpIcon />
+              </Link>
+              <Link to="/us/review" style={{ textDecoration: "none" }}>
+                <div className="usleftmenu_tile">
+                  <div className="usleftmenu_tile_icon">
+                    <ThumbsUpIcon />
+                  </div>
+                  <div className="usleftmenu_tile_title">Review</div>
                 </div>
-                <div className="usleftmenu_tile_title">Review</div>
-              </div>
-              <div className="usleftmenu_tile">
-                <div className="usleftmenu_tile_icon"></div>
-                <div className="usleftmenu_tile_title">About</div>
-              </div>
+              </Link>
+              <Link to="/about" style={{ textDecoration: "none" }}>
+                <div className="usleftmenu_tile">
+                  <div className="usleftmenu_tile_icon">
+                    <HelpIcon />
+                  </div>
+                  <div className="usleftmenu_tile_title">About</div>
+                </div>
+              </Link>
             </div>
           );
         }
