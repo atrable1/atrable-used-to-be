@@ -10,6 +10,7 @@ Informations
 * [result][website]
 ---
 * Frontend: React
+  - used create-react-app
 * Backend: Firebase (for fast deployment)
 
 
