@@ -4,6 +4,7 @@ import firebase from "firebase";
 import "../../firebase";
 import Loading from "../../components/Loading";
 import LoginToUse from "../../components/LoginToUse";
+import VerifyEmail from "../../components/VerifyEmail";
 
 function NewStory() {
   const [init, setInit] = useState(false);
@@ -20,7 +21,15 @@ function NewStory() {
   }, []);
   if (init) {
     if (loggedIn) {
-      return <NavBar />;
+      if (firebase.auth().currentUser.emailVerified) {
+        return <NavBar />;
+      } else {
+        return (
+          <>
+            <NavBar /> <VerifyEmail />
+          </>
+        );
+      }
     } else {
       return <LoginToUse />;
     }
